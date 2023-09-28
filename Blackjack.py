@@ -52,3 +52,16 @@ while playerIn or dealerIn:
         dealerIn = False
     else:
         dealCard(dealerHand)
+
+    if stayorHit == '1':
+        playerIn = False
+    else:
+        dealCard(playerHand)
+    if total(playerHand) >= 21:
+        break
+    elif total(dealerHand) >= 21:
+        break
+
+if total(playerHand) == 21:
+    print(f"player has {playerHand} for a total of {total(playerHand)} and dealer has {dealerHand}for a total of {total(dealerHand)}")
+    print("Blackjack! you win")
