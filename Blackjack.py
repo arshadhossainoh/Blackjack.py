@@ -1,4 +1,6 @@
 import random
+playerIn = True
+dealerIn = True
 # deck of cards
 deck = [2,3,4,5,6,7,8,9,10,2,3,4,5,6,7,8,9,10,2,3,4,5,6,7,8,9,10,2,3,4,5,6,7,8,9,10,
         'j','Q','K','A','j','Q','K','A','j','Q','K','A','j','Q','K','A']
@@ -37,3 +39,16 @@ def revealDealerHand():
 
 
 # game loop
+for _ in range(2):
+    dealCard(dealerHand)
+    dealCard(playerHand)
+
+while playerIn or dealerIn:
+    print(f'dealer has {revealDealerHand()} and X')
+    print(f'player has {playerHand} for a total of {playerHand}')
+    if playerIn:
+        stayorHit = input("1:stay or 2:hit\n")
+    if total(dealerHand) > 16:
+        dealerIn = False
+    else:
+        dealCard(dealerHand)
